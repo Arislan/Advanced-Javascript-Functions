@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Tree View</title>
+    <link rel="stylesheet" type="text/css" href="Task04Style.css" />
+    <script type="text/javascript" src="Task04MenuGeneratorScript.js"></script>
+    <script type="text/javascript" src="Task04MenuBehaviorScript.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Task 04 - Tree View Menu</h1>
+        <p>Click Green Menu Items To Show/Hide SubContent</p>
+    </header>
+    <div class="treeView"></div>
+    <script>
+        //Generate Some Menu
+        var treeView = controls.treeView("div.treeView");
+        var firstNode = treeView.addNode();
+        firstNode.content("Node A");
+        var firstSubNode = firstNode.addNode();
+        firstSubNode.content("Node A 1");
+        var firstSubNode2 = firstNode.addNode();
+        firstSubNode2.content("Node A 2");
+        var firstSubNode3 = firstNode.addNode();
+        firstSubNode3.content("Node A 3");
+
+        var firstSubSubNode = firstSubNode.addNode();
+        var firstSubSubNode2 = firstSubNode.addNode();
+        var firstSubSubNode3 = firstSubNode.addNode();
+        firstSubSubNode.content("Node A 1 1");
+        firstSubSubNode2.content("Node A 1 2");
+        firstSubSubNode3.content("Node A 1 3");
+
+        var firstSubSubSubNode = firstSubSubNode.addNode();
+        var firstSubSubSubNode2 = firstSubSubNode.addNode();
+        var firstSubSubSubNode3 = firstSubSubNode.addNode();
+        firstSubSubSubNode.content("Node A 1 1 1");
+        firstSubSubSubNode2.content("Node A 1 1 2");
+        firstSubSubSubNode3.content("Node A 1 1 3");
+
+        var firstSubSubSubSubNode = firstSubSubSubNode3.addNode();
+        var firstSubSubSubSubNode1 = firstSubSubSubNode3.addNode();
+        var firstSubSubSubSubNode2 = firstSubSubSubNode3.addNode();
+        var firstSubSubSubSubNode3 = firstSubSubSubNode3.addNode();
+        var firstSubSubSubSubNode4 = firstSubSubSubNode3.addNode();
+        firstSubSubSubSubNode.content("Node A 1 1 3 1");
+        firstSubSubSubSubNode1.content("Node A 1 1 3 2");
+        firstSubSubSubSubNode2.content("Node A 1 1 3 3");
+        firstSubSubSubSubNode3.content("Node A 1 1 3 4");
+        firstSubSubSubSubNode4.content("Node A 1 1 3 5");
+        
+       var firstSubSubSubSubSubNode = firstSubSubSubSubNode2.addNode();
+       var firstSubSubSubSubSubNode1 = firstSubSubSubSubNode2.addNode();
+       var firstSubSubSubSubSubNode2 = firstSubSubSubSubNode2.addNode();
+       firstSubSubSubSubSubNode.content("Node A 1 1 3 3 1");
+       firstSubSubSubSubSubNode1.content("Node A 1 1 3 3 2");
+       firstSubSubSubSubSubNode2.content("Node A 1 1 3 3 3");
+
+        var secondNode = treeView.addNode();
+        secondNode.content("Node B");
+        var secondSubNode = secondNode.addNode();
+        secondSubNode.content("Node B 1");
+        var secondSubNode2 = secondNode.addNode();
+        secondSubNode2.content("Node B 2");
+        var secondSubNode3 = secondNode.addNode();
+        secondSubNode3.content("Node B 3");
+
+        var secondSubSubNode = secondSubNode.addNode();
+        var secondSubSubNode2 = secondSubNode.addNode();
+        var secondSubSubNode3 = secondSubNode.addNode();
+        secondSubSubNode.content("Node B 1 1");
+        secondSubSubNode2.content("Node B 1 2");
+        secondSubSubNode3.content("Node B 1 3");
+
+        var secondSubSubSubNode = secondSubSubNode.addNode();
+        var secondSubSubSubNode2 = secondSubSubNode.addNode();
+        var secondSubSubSubNode3 = secondSubSubNode.addNode();
+        secondSubSubSubNode.content("Node B 1 1 1");
+        secondSubSubSubNode2.content("Node B 1 1 2");
+        secondSubSubSubNode3.content("Node B 1 1 3");
+
+        var secondSubSubSubSubNode = secondSubSubSubNode3.addNode();
+        var secondSubSubSubSubNode1 = secondSubSubSubNode3.addNode();
+        var secondSubSubSubSubNode2 = secondSubSubSubNode3.addNode();
+        var secondSubSubSubSubNode3 = secondSubSubSubNode3.addNode();
+        var secondSubSubSubSubNode4 = secondSubSubSubNode3.addNode();
+
+        secondSubSubSubSubNode.content("Node B 1 1 3 1");
+        secondSubSubSubSubNode1.content("Node B 1 1 3 2");
+        secondSubSubSubSubNode2.content("Node B 1 1 3 3");
+        secondSubSubSubSubNode3.content("Node B 1 1 3 4");
+        secondSubSubSubSubNode4.content("Node B 1 1 3 5");
+
+        var thirdNode = treeView.addNode();
+        thirdNode.content("Node C");
+
+        //Add Menu Behaviour
+        altherUlMenu("div.treeView > ul");
+    </script>
+</body>
+</html>

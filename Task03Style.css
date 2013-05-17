@@ -1,0 +1,33 @@
+﻿header {
+    background-color:black;
+    color:white;
+    padding:5px;
+    margin-bottom:10px;
+}
+h1 {
+    margin:0;
+    font-size:25px;
+}
+h2 {
+    color:red;
+    font-size:18px;
+}
+#console {
+    width:700px;
+    height:300px;
+    background-color:black;
+    color:white;
+    overflow:auto;
+    font-size:18px;
+}
+textarea {
+    background-color :red;
+    color:white;
+    width:690px;
+    line-height:20px;
+    border:none;
+    font-size:18px;
+}
+p {
+    margin:5px;
+}

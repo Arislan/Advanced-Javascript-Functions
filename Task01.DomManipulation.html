@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>DOM Manipulation</title>
+    <link rel="stylesheet" type="text/css" href="Task01Style.css" />
+    <!-- Load DomModule Script -->
+    <script type="text/javascript" src="Task01.DomModuleScript.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Task 01 Dom Module</h1>
+        <p><strong>domModule.removeChild</strong> -> Test While Using Reset Buttons</p>
+        <p><strong>domModule.attachEvent</strong> -> Used To Set "click" Event On Reset Buttons </p>
+    </header>
+    <br />
+    <section class="container" id="append">
+        <h2>Test domModule.appendChild()</h2>
+        <div class="domModule" ></div>
+        <div class="butContainer">
+            <button onclick="addDiv()">Add Div Element</button>
+            <br />
+            <button class="reset" >Reset</button>
+        </div>
+    </section>
+    <section class="container" id="buffer">
+        <h2>Test domModule.appendToBuffer() - Max Capacity = 100</h2>
+        <div class="domModule" ></div>
+        <div class="butContainer">
+            <button onclick="addDiv(20)">Add 20 Div Element</button>
+            <br />
+            <button class="reset">Reset</button>
+        </div>
+    </section>
+
+    <!-- Test domModule Functionality -->
+    <script>        
+        var addDiv = function AddDiv(divsCount) {
+            var div = document.createElement("div");
+
+            if (divsCount) {
+                for (var i = 0; i < divsCount; i++) {
+                    //test buffer - appendToBuffer(parent,child);
+                    domModule.appendToBuffer("#buffer .domModule", div);
+                    div.className = "testBuffer";
+                    div = document.createElement("div");
+                }
+            }
+            else {
+                div.className = "testAppend";
+                //test appendChild(children,parent)
+                domModule.appendChild(div, "#append .domModule");
+            }
+        }     
+       
+        var reset = function Reset()
+        {
+            //test removeChild(parent,children)
+            domModule.removeChild(".domModule","div");
+        }
+
+        //test attachEvent(element, eventName, eventHandler, multiply/optional - to attach event to all matched elements/)
+        domModule.attachEvent(".reset", "click", reset, true);
+    </script>
+</body>
+</html>

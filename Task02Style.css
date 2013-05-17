@@ -1,0 +1,51 @@
+﻿header {
+    color:white;
+    background-color:black;
+    padding:20px;
+    width:1160px;
+    margin-bottom:20px;
+}
+h1 {
+    margin:0px;
+    margin-bottom:5px;
+}
+section,header {
+    width:1200px;
+}
+#shapeField div {
+    line-height : 50px;
+    text-align:center;
+}
+#shapeField {
+    display:inline-block;
+    position:relative;
+    background-color:black;
+}
+#controls {
+    float:right;
+    margin-top:50px;
+    text-align:center;
+    width:225px;
+}
+button , input{
+    margin-top:5px;
+    padding:5px;
+    background-color:black;
+    color:white;
+    width:220px;
+}
+.play {
+    width:40px;
+    padding:5px;
+    display:inline-block;
+}
+button:hover {
+    background-color:red;
+}
+button:active {
+    background-color:white;
+    color:black;
+}
+input {
+    background-color:rgba(0,0,0,0.8);
+}    

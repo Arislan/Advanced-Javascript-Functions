@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Moving Shapes</title>
+    <link rel="stylesheet" type="text/css" href="Task02Style.css" />
+    <script type="text/javascript" src="Task02MovingShapesScript.js"></script>
+</head>
+<body onload="movingShapes.initialiseShapeField('#shapeField', 50, 800)">
+    <header>
+        <h1>Task 02 - Moving Shapes</h1>
+        <p>Click Buttons To Add Shapes With Diferent Movement.
+            <br />
+            Each Shape Will Span On Random Position On The Field.
+            <br />
+            Each Shape Will Move In Fixed Random Trajectory.
+        </p>
+    </header>
+    <section>
+        <div id="shapeField"></div>
+        <div id="controls">
+            <button onclick="movingShapes.add('rect')">Add Rectangular Moving Shape</button>
+            <button onclick="movingShapes.add('circle')">Add Circle Moving Shape</button>
+            <button onclick="movingShapes.add('elipse')">Add Elipse Moving Shape</button>
+            <hr />
+            <button onclick="movingShapes.start(0)" class="play">></button>
+            <button onclick="movingShapes.stop()"  class="play">||</button>
+            <button onclick="movingShapes.start(-100)" class="play">+</button>
+            <button onclick="movingShapes.start(100)"  class="play">-</button>
+            <hr />
+            <button onclick="ChangeDivsShapeToCircle()">Show Divs As Circles</button>
+            <button onclick="DefaultShape()">Default Shape</button>
+            <button onclick="movingShapes.randomShapeSize()">Random Shapes Size</button>
+            <input type="text" id="input" placeholder="Enter Field Size Here" />
+            <button onclick="ChangeFieldSize()">Custom Field Size</button>
+        </div>
+    </section>
+    <!-- Some Custom Functionality For Display -->
+    <script>
+        function ChangeDivsShapeToCircle() {
+            var style = document.createElement("style");
+            style.id = "movingShapeStyleShapes";
+            style.innerHTML = "body #shapeField div { border-radius : 50px }";
+            document.head.appendChild(style);
+        }
+        function DefaultShape() {
+            document.head.removeChild(document.getElementById("movingShapeStyleShapes"));
+        }
+        function ChangeFieldSize() {
+            document.body.removeChild(document.body.querySelector("header"));
+            var fieldSize = parseInt(document.getElementById("input").value);
+            if (!isNaN(fieldSize)) {
+                movingShapes.initialiseShapeField("#shapeField", 50, fieldSize);
+            }
+        }
+    </script>
+</body>
+</html>

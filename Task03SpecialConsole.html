@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Special Console</title>
+   <link rel="stylesheet" type="text/css" href="Task03Style.css" />
+    <!-- Main Script-->
+    <script type="text/javascript" src="Task03SpecialConsoleModuleScript.js"></script>
+    <!-- Unralated To Homework -->
+    <script type="text/javascript" src="Task03SpecialHtmlConsoleScript.js"></script>
+</head>
+<body onload ="document.getElementById('consoleLine').focus()">
+    <header>
+        <h1>Task 03 - Special Console Module</h1>
+        <p>Tested Default Features :</p>
+        <ul>
+            <li>specialConsole.writeLine("Hello World, My Name Is Rambo. Rambo Is 10 Years Old And He Likes Puppies. Rambo Telephone Is 077777777!"); + PlaceHolder Version</li>
+            <li>specialConsole.writeWarning("You Make Rambo Angry !"); + PlaceHolder Version</li>
+            <li>specialConsole.writeError("Rambo Beat You UP !"); + PlaceHolder Version</li>
+        </ul>
+        <h2>You Can Test Commands On This HTML Console / Outputs To Default Console/ : </h2>
+    </header>
+    <div id="console" onkeyup ="processKey">
+        <textarea id="consoleLine" ></textarea>
+    </div>
+    <script id="engine"></script>
+    <script>
+        specialConsole.writeLine("Hello World, My Name Is Rambo. Rambo Is 10 Years Old And He Likes Puppies. Rambo Telephone Is 077777777!");
+        specialConsole.writeLine("Hello {0}, My Name Is {1}. {1} Is {2} Years Old And He Likes {3}. {1} Telephone Is {4}!", "World", "Rambo", "10", "Puppies", "077777777");
+        specialConsole.writeWarning("You Make Rambo Angry !");
+        specialConsole.writeWarning("{0} {1} {2} {3} !", "You", "Make", "Rambo", "Angry");
+        specialConsole.writeError("Rambo Beat You UP !");
+        specialConsole.writeError("{0} {1} {2} {3} {4}", "Rambo", "Beat", "You", "UP", "!");
+    </script>
+</body>
+</html>
